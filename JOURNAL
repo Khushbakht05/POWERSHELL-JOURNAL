@@ -1,0 +1,242 @@
+# POWERSHELL-JOURNAL
+1. Get-Help
+Description: Displays detailed information about PowerShell cmdlets, functions, or workflows.
+Syntax: Get-Help 
+Example: Get-Help
+
+
+2.Get-Process
+Description: Retrieves information about processes running on the system.
+Syntax: Get-Process [-Name <ProcessName>]
+Example: Get-Process -Name powershell
+
+3. Set-Service
+Description: Changes the status of a Windows service (start, stop, pause, etc.).
+Syntax: Set-Service -Name <ServiceName> -Status <Status>
+Example: Set-Service -Name wuauserv -Status Stopped
+
+4. Start-Service
+Description: Starts a stopped Windows service.
+Syntax: Start-Service -Name <ServiceName>
+Example: Start-Service -Name wuauserv
+
+5. Stop-Service
+Description: Stops a running Windows service.
+Syntax: Stop-Service -Name <ServiceName>
+Example: Stop-Service -Name spooler
+
+6. Get-Service
+Description: Retrieves the status of services on the system.
+Syntax: Get-Service [-Name <ServiceName>]
+Example: Get-Service -Name wuauserv
+
+7. New-Item
+Description: Creates a new file, folder, or registry entry.
+Syntax: New-Item -Path <Path> -ItemType <ItemType>
+Example: New-Item -Path C:\Temp\example.txt -ItemType File
+
+8. Remove-Item
+Description: Deletes files, folders, or registry entries.
+Syntax: Remove-Item -Path <Path>
+Example: Remove-Item -Path C:\Temp\example.txt
+
+9. Get-ChildItem
+Description: Lists files and folders in a directory.
+Syntax: Get-ChildItem -Path <Path>
+Example: Get-ChildItem -Path C:\Temp
+
+10. Import-CSV
+Description: Imports data from a CSV file as objects.
+Syntax: Import-CSV -Path <Path>
+Example: Import-CSV -Path C:\Temp\users.csv
+
+11. Export-CSV
+Description: Exports objects to a CSV file.
+Syntax: Export-CSV -Path <Path>
+Example: Get-Process | Export-CSV -Path C:\Temp\processes.csv -NoTypeInformation
+
+12. Add-Content
+Description: Appends content to a file.
+Syntax: Add-Content -Path <Path> -Value <Text>
+Example: Add-Content -Path C:\Temp\example.txt -Value "This is a new line."
+
+13. Set-Content
+Description: Overwrites the content of a file with new data.
+Syntax: Set-Content -Path <Path> -Value <Text>
+Example: Set-Content -Path C:\Temp\example.txt -Value "Overwritten content."
+
+14. Get-EventLog
+Description: Retrieves events from the event log.
+Syntax: Get-EventLog -LogName <LogName>
+Example: Get-EventLog -LogName System -Newest 5
+
+15. Test-Connection
+Description: Sends ICMP echo requests to test network connectivity (similar to ping).
+Syntax: Test-Connection -ComputerName <Name>
+Example: Test-Connection -ComputerName google.com
+
+16. New-ADUser
+Description: Creates a new user in Active Directory.
+Syntax: New-ADUser -Name <Name> -SamAccountName <Username> -Path <OUPath>
+Example: New-ADUser -Name "John Doe" -SamAccountName jdoe -Path "OU=Users,DC=example,DC=com"
+
+17. New-ADGroup
+Description: Creates a new group in Active Directory.
+Syntax: New-ADGroup -Name <GroupName> -GroupScope <Scope>
+Example: New-ADGroup -Name "HR Group" -GroupScope Global
+
+18. Add-ADGroupMember
+Description: Adds a user to a group in Active Directory.
+Syntax: Add-ADGroupMember -Identity <GroupName> -Members <UserName>
+Example: Add-ADGroupMember -Identity "HR Group" -Members jdoe
+
+19. Get-ADUser
+Description: Retrieves information about users in Active Directory.
+Syntax: Get-ADUser -Filter <Filter>
+Example: Get-ADUser -Filter {Name -like "John*"}
+
+20. New-PSDrive
+Description: Creates a temporary PowerShell drive mapped to a folder or registry key.
+Syntax: New-PSDrive -Name <DriveName> -PSProvider <ProviderName> -Root <RootPath>
+Example: New-PSDrive -Name TempDrive -PSProvider FileSystem -Root C:\Temp
+
+21. Set-ExecutionPolicy
+Description: Changes the user preference for the PowerShell script execution policy.
+Syntax: Set-ExecutionPolicy -ExecutionPolicy <Policy>
+Example: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+
+22. Get-ExecutionPolicy
+Description: Retrieves the current execution policy.
+Syntax: Get-ExecutionPolicy
+Example: Get-ExecutionPolicy
+
+23. Invoke-Command
+Description: Runs commands on local or remote computers.
+Syntax: Invoke-Command -ComputerName <Name> -ScriptBlock { <Commands> }
+Example: Invoke-Command -ComputerName SRV001KG -ScriptBlock { Get-Service }
+
+28. New-SMBShare
+Description: Creates a new SMB file share.
+Syntax: New-SMBShare -Name <ShareName> -Path <FolderPath> -FullAccess <User>
+Example: New-SMBShare -Name "HRShare" -Path "C:\HR" -FullAccess "Domain Users"
+
+29. Get-SMBShare
+Description: Retrieves information about SMB shares.
+Syntax: Get-SMBShare
+Example: Get-SMBShare
+
+30. Remove-SMBShare
+Description: Deletes an SMB file share.
+Syntax: Remove-SMBShare -Name <ShareName>
+Example: Remove-SMBShare -Name "HRShare"
+
+
+Here are additional PowerShell cmdlets and their details to expand your cheat sheet:
+
+21. Set-ExecutionPolicy
+Description: Changes the user preference for the PowerShell script execution policy.
+Syntax: Set-ExecutionPolicy -ExecutionPolicy <Policy>
+Example:
+powershell
+Copy code
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+22. Get-ExecutionPolicy
+Description: Retrieves the current execution policy.
+Syntax: Get-ExecutionPolicy
+Example:
+powershell
+Copy code
+Get-ExecutionPolicy
+23. Invoke-Command
+Description: Runs commands on local or remote computers.
+Syntax: Invoke-Command -ComputerName <Name> -ScriptBlock { <Commands> }
+Example:
+powershell
+Copy code
+Invoke-Command -ComputerName SRV001KG -ScriptBlock { Get-Service }
+24. Start-Job
+Description: Starts a background job.
+Syntax: Start-Job -ScriptBlock { <Commands> }
+Example:
+powershell
+Copy code
+Start-Job -ScriptBlock { Get-Process }
+25. Get-Job
+Description: Retrieves information about PowerShell background jobs.
+Syntax: Get-Job
+Example:
+powershell
+Copy code
+Get-Job
+26. Receive-Job
+Description: Retrieves the results of a background job.
+Syntax: Receive-Job -Id <JobId>
+Example:
+powershell
+Copy code
+Receive-Job -Id 1
+27. Stop-Job
+Description: Stops a running background job.
+Syntax: Stop-Job -Id <JobId>
+Example:
+powershell
+Copy code
+Stop-Job -Id 1
+28. New-SMBShare
+Description: Creates a new SMB file share.
+Syntax: New-SMBShare -Name <ShareName> -Path <FolderPath> -FullAccess <User>
+Example:
+powershell
+Copy code
+New-SMBShare -Name "HRShare" -Path "C:\HR" -FullAccess "Domain Users"
+29. Get-SMBShare
+Description: Retrieves information about SMB shares.
+Syntax: Get-SMBShare
+Example:
+powershell
+Copy code
+Get-SMBShare
+30. Remove-SMBShare
+Description: Deletes an SMB file share.
+Syntax: Remove-SMBShare -Name <ShareName>
+Example:
+powershell
+Copy code
+Remove-SMBShare -Name "HRShare"
+
+31. Set-ADUser
+Description: Modifies properties of an Active Directory user.
+Syntax: Set-ADUser -Identity <UserName> -Property <PropertyName> -Value <Value>
+Example: Set-ADUser -Identity jdoe -Title "HR Manager"
+
+32. Rename-Computer
+Description: Renames a computer and optionally restarts it.
+Syntax: Rename-Computer -NewName <NewName> -Restart
+Example: Rename-Computer -NewName "NewPCName" -Restart
+
+33. Restart-Computer
+Description: Restarts a local or remote computer.
+Syntax: Restart-Computer -ComputerName <Name>
+Example: Restart-Computer -ComputerName SRV001KG
+
+34. Get-WmiObject
+Description: Retrieves management information about local or remote systems.
+Syntax: Get-WmiObject -Class <WMI_Class>
+Example: Get-WmiObject -Class Win32_OperatingSystem
+
+35. Select-Object
+Description: Selects specific properties of objects.
+Syntax: Select-Object -Property <PropertyName>
+Example: Get-Service | Select-Object -Property Name, Status
+
+36. Format-Table
+Description: Formats output as a table.
+Syntax: Format-Table -Property <PropertyName>
+Example: Get-Process | Format-Table -Property Name, CPU
+
+37. Read-Host
+Description: Prompts the user for input.
+Syntax: Read-Host -Prompt <Message>
+Example: $name = Read-Host -Prompt "Enter your name"
+
+
