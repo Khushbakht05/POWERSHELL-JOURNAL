@@ -7,15 +7,5 @@ This journal contains all of the PowerShell cmdlets that were discussed in the c
 
 
 
-TABLE OF CONTENT:
-CLASSWORK 1
-CLASSWORK 2
-CLASSWORK 3
-CLASSWORK 4
-CLASSWORK 5
-CLASSWORK 6
-CLASSWORK 7
-CLASSWORK 8
-CLASSWORK 9
-CLASSWORK 10
+
 
